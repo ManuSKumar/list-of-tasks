@@ -1,15 +1,25 @@
 import React, { Component } from 'react'
 import Card from './Card'
 
+import { connect } from "react-redux";
+
 import './ListHolder.scss'
 
-export default class ListHolder extends Component {
+class ListHolder extends Component {
     render() {
-        const { list } = this.props
-        return (
+        const { taskList } = this.props
+       return (
             <div className='listHolder'>
-                {list.map(task =>  <Card key={task.id} name={task.name} type={task.type} /> )}
+                {taskList.map(task =>  <Card key={task.taskId} name={task.name} type={task.type} /> )}
             </div>
         )
     }
 }
+
+const mapStateToProps = state => {
+    const { taskList } = state.tasks;
+    return { taskList };
+  };
+
+// export default ListHolder;
+export default connect(mapStateToProps)(ListHolder);

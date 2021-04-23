@@ -1,36 +1,22 @@
-import ListHolder from "./components/ListHolder";
-import Header from "./components/Header";
+import React from "react";
+
+import { Provider } from "react-redux";
+import store from "./redux/store";
 
 import "./App.scss";
 
-const ListofCards=[{
-  name:'Task1',
-  type:'good',
-  taskId:1
-},
-{
-  name:'Task1',
-  type:'bad',
-  taskId:2
-},
-{
-  name:'Task1',
-  type:'good',
-  taskId:3
-},
-{
-  name:'Task1',
-  type:'good',
-  taskId:4
-}
-]
+import ListHolder from "./components/ListHolder";
+import Header from "./components/Header";
+
 
 function App() {
   return (
-    <div className="app">
-     <Header/>
-     <ListHolder list={ListofCards}/>
-    </div>
+    <Provider store={store}>
+      <div className="app">
+        <Header />
+        <ListHolder/>
+      </div>
+    </Provider>
   );
 }
 

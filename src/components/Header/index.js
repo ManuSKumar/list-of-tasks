@@ -7,7 +7,7 @@ export default class Header extends Component {
             <div className='header'>
                 <h1 className='header-name'>Task List</h1>
             <div className='button-holder'>
-              <button className='button-create'>Create +</button>
+              <button className='button-create'>Create Task</button>
             </div>
             </div>
         )
