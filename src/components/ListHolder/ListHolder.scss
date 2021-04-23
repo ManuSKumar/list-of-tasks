@@ -1,6 +1,13 @@
 .listHolder{
-   width: 80vw;
+   width: 80%;
+   height: 100%;
+   padding:10px;
+   background:white;
+   border:1px solid #bdbdbd;
    //height: 99.5vh;
    margin:  auto;
+   display: flex;
+   flex-direction: column;
+  // align-items: center;
 
 }
