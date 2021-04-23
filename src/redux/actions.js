@@ -1,17 +1,27 @@
-import {ADD_TO_TASKLIST,CHANGE_POPUP_VISIBILITY } from "./actionTypes";
+import {ADD_TO_TASKLIST,REMOVE_FROM_TASKLIST,UPDTE_TASKLIST } from "./actionTypes";
 
-let nextTaskId = 0;
+
 
 export const addToTaskList = content => ({
   type: ADD_TO_TASKLIST,
   payload: {
-    id: ++nextTaskId,
+    taskId: new Date().getTime() ,
     content
   }
 });
 
-export const changePopupVisibility = () => ({
-  type: CHANGE_POPUP_VISIBILITY,
-});
+export const removeFromTaskList = content => ({
+    type: REMOVE_FROM_TASKLIST,
+    payload: {
+     taskId:content
+    }
+  });
+
+export const updateTaskList = content => ({
+    type: UPDTE_TASKLIST,
+    payload: {
+      content
+    }
+  });
 
 

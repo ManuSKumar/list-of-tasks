@@ -10,7 +10,7 @@ class ListHolder extends Component {
         const { taskList } = this.props
        return (
             <div className='listHolder'>
-                {taskList.map(task =>  <Card key={task.taskId} name={task.name} type={task.type} /> )}
+                {taskList.map(task =>  <Card key={task.taskId} id={task.taskId} name={task.name} type={task.type} /> )}
             </div>
         )
     }
